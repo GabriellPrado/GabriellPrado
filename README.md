@@ -8,6 +8,7 @@
 
 ## Repositório em destaque
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=gabriellprado&repo=iOS-Calculator&show_icons=true&theme=react)](https://github.com/GabriellPrado/iOS-Calculator)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=gabriellprado&repo=Aspect-ratio-padding-calculator&show_icons=true&theme=react)](https://github.com/GabriellPrado/Aspect-ratio-padding-calculator)
 
 
 
