@@ -11,7 +11,7 @@
   Desenvolvedor Web & Mobile
 </p>
 
-<div style="margin-bottom: 2rem;">
+<div style="display:block; margin-bottom: 3rem;">
   <a href="https://discordapp.com/users/237427853887537153" target="_blank" rel="noopener noreferrer" style="margin: 0 0.5rem;">
     <img src="https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&labelColor=000000&logo=discord&logoColor=235865F2" alt="Discord" />
   </a>
@@ -23,9 +23,11 @@
   </a>
 </div>
 
-<div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem;">
-  <img src="https://github-readme-stats.vercel.app/api?username=gabriellprado&show_icons=true&theme=default&hide_border=true" alt="GitHub Stats" style="max-width: 350px; border-radius: 8px; box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=gabriellprado&layout=compact&theme=default&hide_border=true" alt="Top Languages" style="max-width: 300px; border-radius: 8px; box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);" />
+<div style="display: block; margin: 2rem 0;">
+  <img src="https://github-readme-stats.vercel.app/api?username=gabriellprado&show_icons=true&theme=default&hide_border=true" alt="GitHub Stats" style="width: 350px; border-radius: 8px; box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);" />
+</div>
+<div style="display: block; margin-bottom: 2rem;">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=gabriellprado&layout=compact&theme=default&hide_border=true" alt="Top Languages" style="width: 350px; border-radius: 8px; box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);" />
 </div>
 
 <h2 style="color: #222; margin-bottom: 1rem;">Projeto em Destaque</h2>
