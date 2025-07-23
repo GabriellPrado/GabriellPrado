@@ -26,14 +26,16 @@ jobs:
           awk 'BEGIN {p=1} /<!--STATS_SECTION-->/ {system("cat temp.md"); p=0; next} /---/ {p=1} p' README.md > new_readme.md
           mv new_readme.md README.md
 
-      - name: Commit e Push
+      - name: Commit e Push com PAT
         env:
           PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           git config --global user.name "Gabriell Bot"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.email "github-actions@users.noreply.github.com"
+
+          # Autentica o push com o token pessoal
           git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}
+
           git add README.md
           git commit -m "Atualiza README com stats privados via Actions" || exit 0
-          git push
-        continue-on-error: true
+          git push https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }} HEAD:main
