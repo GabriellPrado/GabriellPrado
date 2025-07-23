@@ -10,7 +10,7 @@ Sou o Gabriell, desenvolvedor apaixonado por transformar ideias em código e cri
 ## 📊 Estatísticas do GitHub
 
 <!--STATS_SECTION-->
-
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=GabriellPrado&show_icons=true&theme=react&include_all_commits=true&count_private=true&token=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)
 ---
 
 ## 📌 Repositórios em destaque
