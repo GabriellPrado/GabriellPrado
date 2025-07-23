@@ -1,36 +1,36 @@
 name: Atualiza README com stats privados
 
 on:
-  workflow_dispatch:  # executa manualmente
+  workflow_dispatch:
   schedule:
-    - cron: '0 1 * * *' # executa todo dia às 01h
+    - cron: '0 1 * * *' # Roda todo dia às 01h
   push:
     branches:
       - main
 
 jobs:
-  build:
+  update-readme:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout do repositório
         uses: actions/checkout@v3
 
-      - name: Gera seção de stats
+      - name: Gera badge com stats privados
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          echo "![GitHub Stats](https://github-readme-stats.vercel.app/api?username=gabriellprado&show_icons=true&theme=react&include_all_commits=true&count_private=true&token=${GH_TOKEN})" > stats.md
+          echo "<!--STATS_SECTION-->" > temp.md
+          echo "![GitHub Stats](https://github-readme-stats.vercel.app/api?username=gabriellprado&show_icons=true&theme=react&include_all_commits=true&count_private=true&token=${GH_TOKEN})" >> temp.md
 
-      - name: Atualiza README final
-        run: |
-          sed '/<!--STATS_SECTION-->/r stats.md' README.template.md > README.md
+          awk 'BEGIN {p=1} /<!--STATS_SECTION-->/ {system("cat temp.md"); p=0; next} /---/ {p=1} p' README.md > new_readme.md
+          mv new_readme.md README.md
 
       - name: Commit e Push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git commit -m "Atualiza README com stats privados"
+          git commit -m "Atualiza README com stats privados via Actions"
           git push
         continue-on-error: true
