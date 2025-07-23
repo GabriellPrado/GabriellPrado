@@ -21,21 +21,20 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           echo "<!--STATS_SECTION-->" > temp.md
-          echo "![GitHub Stats](https://github-readme-stats.vercel.app/api?username=gabriellprado&show_icons=true&theme=react&include_all_commits=true&count_private=true&token=${GH_TOKEN})" >> temp.md
+          echo "![GitHub Stats](https://github-readme-stats.vercel.app/api?username=GabriellPrado&show_icons=true&theme=react&include_all_commits=true&count_private=true&token=${GH_TOKEN})" >> temp.md
 
           awk 'BEGIN {p=1} /<!--STATS_SECTION-->/ {system("cat temp.md"); p=0; next} /---/ {p=1} p' README.md > new_readme.md
           mv new_readme.md README.md
 
       - name: Commit e Push com PAT
         env:
-          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+          PAT_TOKEN: ${{ secrets.GH_PAT }}
         run: |
           git config --global user.name "Gabriell Bot"
           git config --global user.email "github-actions@users.noreply.github.com"
 
-          # Autentica o push com o token pessoal
           git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}
 
           git add README.md
-          git commit -m "Atualiza README com stats privados via Actions" || exit 0
-          git push https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }} HEAD:main
+          git commit -m "Atualiza README com stats privados via Actions" || echo "Nada para commitar"
+          git push origin HEAD:main
