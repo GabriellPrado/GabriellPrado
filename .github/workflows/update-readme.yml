@@ -20,6 +20,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
+          echo "${GH_TOKEN}"
           echo "<!--STATS_SECTION-->" > temp.md
           echo "![GitHub Stats](https://github-readme-stats.vercel.app/api?username=GabriellPrado&show_icons=true&theme=react&include_all_commits=true&count_private=true&token=${GH_TOKEN})" >> temp.md
 
