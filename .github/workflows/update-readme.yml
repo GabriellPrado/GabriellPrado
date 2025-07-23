@@ -1,0 +1,36 @@
+name: Update README with Private Stats
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *' # roda todo dia à meia-noite (opcional)
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Generate GitHub stats README
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          # Crie um arquivo parcial com o token embutido para o badge do stats
+          echo "![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=gabriellprado&show_icons=true&theme=react&token=${GH_TOKEN})" > stats.md
+
+          # Aqui você pode criar o README completo juntando o stats.md e seu README original
+          # Ou usar alguma ferramenta/template que gere seu README final
+          # Exemplo simples: só sobrescrever o README com o stats incluído
+          cat stats.md > README.md
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Atualiza README com stats privados"
+          git push
+        continue-on-error: true
