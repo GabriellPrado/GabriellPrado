@@ -2,7 +2,7 @@
 
 <div align="center" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 700px; margin: auto;">
 
-<h1 style="font-weight: 900; font-size: 3.5rem; color: #222; 
+<!-- <h1 style="font-weight: 900; font-size: 3.5rem; color: #222; 
     text-shadow: 2px 2px 6px rgba(0,0,0,0.1); margin-bottom: 0.2rem;">
   Gabriell Prado
 </h1>
@@ -21,7 +21,7 @@
   <a href="https://github.com/gabriellprado" target="_blank" rel="noopener noreferrer" style="margin: 0 0.5rem;">
     <img src="https://img.shields.io/badge/GitHub-%2312100E.svg?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
-</div>
+</div> -->
 
 <div style="display: block; margin: 2rem 0;">
   <img src="https://github-readme-stats.vercel.app/api?username=gabriellprado&show_icons=true&theme=default&hide_border=true" alt="GitHub Stats" style="width: 350px; border-radius: 8px; box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);" />
